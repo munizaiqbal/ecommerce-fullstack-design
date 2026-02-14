@@ -1,0 +1,12 @@
+.sidebar ul li,.sidebar ul li a{
+  transition: background-color 0.3s ease, font-weight 0.1s ease;
+}
+
+
+.sidebar ul li:hover {
+background-color: rgba(161, 159, 159, 0.329);
+color: white !important;
+}
+.sidebar ul li a:hover {
+  font-weight: 500;
+}
