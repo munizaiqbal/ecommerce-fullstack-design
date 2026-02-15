@@ -3,9 +3,9 @@ import './CategorySidebar.css';
 
 function CategorySidebar() {
   return (
-<div className="bg-white my-4 sidebar">
-  <ul className="list-unstyled m-0 p-1 text-center  ">
-    <li><a className="text-decoration-none d-block py-2 text-secondary" href="#">Automobiles</a></li>
+<div className="bg-white sidebar h-100 " style={{minWidth:'150px'}}>
+  <ul className="list-unstyled m-0 text-center  ">
+    <li><a className="text-decoration-none d-block  py-2 text-secondary" href="#">Automobiles</a></li>
     <li><a className="text-decoration-none d-block py-2 text-secondary" href="#">Clothes and wear</a></li>
     <li><a className="text-decoration-none d-block py-2 text-secondary" href="#">Home interiors</a></li>
     <li><a className="text-decoration-none d-block py-2 text-secondary" href="#">Computer and tech</a></li>

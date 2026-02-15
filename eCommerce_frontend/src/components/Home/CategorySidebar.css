@@ -1,3 +1,8 @@
+.sidebar ul li {
+  white-space: nowrap;
+}
+
+
 .sidebar ul li,.sidebar ul li a{
   transition: background-color 0.3s ease, font-weight 0.1s ease;
 }
