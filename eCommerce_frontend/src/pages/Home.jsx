@@ -6,6 +6,9 @@ import CategorySidebar from "../components/Home/CategorySidebar";
 import HeroBanner from "../components/Home/HeroBanner";
 import PromoCards from "../components/Home/PromoCards";
 import Avatar from "../assets/Home/Avatar.png";
+import LeftPromoCards from "../components/Home/LeftPromoCards";
+import ProductsGrid from "../components/Home/ProductsGrid";
+import leftCard from "../assets/Home/leftCard1.png";
 function Home() {
   return (
     <>
@@ -15,7 +18,7 @@ function Home() {
       <div className="bg-body-secondary ">
         <div className="container-xxl ">
           {/* top Section */}
-          <div className="row  "  style={{ minHeight: "400px" }}>
+          <div className="row  " style={{ minHeight: "400px" }}>
             <div className=" col-12 col-md-3 d-none d-md-block">
               <CategorySidebar />
             </div>
@@ -56,8 +59,43 @@ function Home() {
           </div>
         </div>
       </div>
+
       {/* Product Section */}
-      <div className="mt-5">Products Section</div>
+      <div className="mt-5 container-xxl ">
+        <div className="row">
+          <div className="col-md-3">
+            <LeftPromoCards
+              bgColor="#FFE8BA66"
+              bgImage={leftCard}
+              description="Home and outdoor"
+              button={{
+                text: "Source Now",
+                variant: "light",
+                onClick: () => {
+                  alert("sourced");
+                },
+              }}
+            />
+               <LeftPromoCards
+              bgColor="#FFE8BA66"
+              bgImage={leftCard}
+              description="Home and outdoor"
+              button={{
+                text: "Source Now",
+                variant: "light",
+                onClick: () => {
+                  alert("sourced");
+                },
+              }}
+            />
+          </div>
+
+          <div className="col-12 col-md-9">
+            <ProductsGrid />
+          </div>
+        </div>
+        <div className="flex-grow-2"></div>
+      </div>
 
       {/* Promo Banner */}
       <div className="mt-5">Blue Banner</div>
