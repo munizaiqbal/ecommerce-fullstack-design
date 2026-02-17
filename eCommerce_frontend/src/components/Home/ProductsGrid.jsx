@@ -4,10 +4,10 @@ import ProductCard from "./ProductsSection";
 
 function ProductsGrid() {
   return (
-    <div className="container mt-4">
-      <div className="row g-4">
+    <div className="container ">
+      <div className="row g-2">
         {products.map((product) => (
-          <div key={product.id} className="col-6 col-sm-4 col-lg-3">
+          <div key={product.id} className="col-6 col-sm-4 col-lg-3 d-flex">
             <ProductCard product={product} />
           </div>
         ))}

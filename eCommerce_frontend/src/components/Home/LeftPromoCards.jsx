@@ -10,7 +10,7 @@ function LeftPromoCards({bgColor, bgImage,description,button}) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat"}}>
-          <p>{description}</p>
+          <p className='fw-semibold'>{description}</p>
 <button
 className={`btn btn-${button?.variant || 'light'}`} onClick={button?.onClick}
 >{button?.text}</button>

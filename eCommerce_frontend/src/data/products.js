@@ -8,6 +8,18 @@ import claypot from "../assets/Home/claypot.png";
 import kettle from "../assets/Home/kettle.png";
 import camera from "../assets/Home/camera.png";
 import headphones from "../assets/Home/headphone.png";
+import blueJacket from "../assets/Home/blueJacket.png";
+import coffeeMachine from "../assets/Home/coffeMachine.png";
+import mobile from "../assets/Home/mobile.png";
+import juiceMachine from "../assets/Home/juiceMachine.png";
+import lamp from "../assets/Home/lamp.png";
+import laptop from "../assets/Home/laptop.png";
+
+
+
+
+
+
 
 
 
@@ -80,9 +92,51 @@ const products = [
   },
     {
     id: 10,
-    name: "Hedphones",
+    name: "Hedphone",
     price: 18.50,
     image: headphones,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 11,
+    name: "Blue Jacket",
+    price: 15.00,
+    image: blueJacket,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 12,
+    name: "Samsung",
+    price: 80.00,
+    image: mobile,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 13,
+    name: "Laptop",
+    price: 50.50,
+    image: laptop,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 14,
+    name: "Lamp",
+    price: 20.00,
+    image: lamp,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 15,
+    name: "Coffee Machine",
+    price: 35.50,
+    image: coffeeMachine,
+    description: "Headset for gaming with mic"
+  },
+    {
+    id: 16,
+    name: "Juice Machine",
+    price: 30.00,
+    image: juiceMachine,
     description: "Headset for gaming with mic"
   }
 ];

@@ -9,6 +9,10 @@ import Avatar from "../assets/Home/Avatar.png";
 import LeftPromoCards from "../components/Home/LeftPromoCards";
 import ProductsGrid from "../components/Home/ProductsGrid";
 import leftCard from "../assets/Home/leftCard1.png";
+import leftCard2 from "../assets/Home/leftCard2.png";
+
+
+import ProductsPromoCardsGrid from '../components/Home/ProductsPromoCardGrid'
 function Home() {
   return (
     <>
@@ -61,9 +65,9 @@ function Home() {
       </div>
 
       {/* Product Section */}
-      <div className="mt-5 container-xxl ">
+      <div className="mt-3 container-xxl ">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 d-flex flex-column justify-content-centre align-items-center gap-3">
             <LeftPromoCards
               bgColor="#FFE8BA66"
               bgImage={leftCard}
@@ -77,9 +81,9 @@ function Home() {
               }}
             />
                <LeftPromoCards
-              bgColor="#FFE8BA66"
-              bgImage={leftCard}
-              description="Home and outdoor"
+              bgColor="#FFFFFF4D"
+              bgImage={leftCard2}
+              description="Consumer electronics and gadgets"
               button={{
                 text: "Source Now",
                 variant: "light",
@@ -91,7 +95,7 @@ function Home() {
           </div>
 
           <div className="col-12 col-md-9">
-            <ProductsGrid />
+           <ProductsPromoCardsGrid />
           </div>
         </div>
         <div className="flex-grow-2"></div>
