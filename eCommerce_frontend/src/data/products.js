@@ -17,15 +17,6 @@ import laptop from "../assets/Home/laptop.png";
 
 
 
-
-
-
-
-
-
-
-
-
 const products = [
   {
     id: 1,

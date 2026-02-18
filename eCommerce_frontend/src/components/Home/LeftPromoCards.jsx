@@ -4,7 +4,7 @@ function LeftPromoCards({bgColor, bgImage,description,button}) {
   return (
     <div className=" p-2 d-flex justify-content-center align-items-start flex-column d-none d-md-flex" style={{ 
         minHeight: "200px",
-        width:'200px',
+        width:'230px',
       backgroundColor: bgColor,
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

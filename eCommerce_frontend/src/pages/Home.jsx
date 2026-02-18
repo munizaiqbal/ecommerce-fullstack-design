@@ -10,9 +10,13 @@ import LeftPromoCards from "../components/Home/LeftPromoCards";
 import ProductsGrid from "../components/Home/ProductsGrid";
 import leftCard from "../assets/Home/leftCard1.png";
 import leftCard2 from "../assets/Home/leftCard2.png";
+import BlogSection from "../components/Home/BlogSection";
+import ProductsPromoCardsGrid from "../components/Home/ProductsPromoCardGrid";
+import ServicesList from "../components/Home//ServicesList";
 
 
-import ProductsPromoCardsGrid from '../components/Home/ProductsPromoCardGrid'
+
+
 function Home() {
   return (
     <>
@@ -65,7 +69,7 @@ function Home() {
       </div>
 
       {/* Product Section */}
-      <div className="mt-3 container-xxl ">
+      <div className=" container-xxl ">
         <div className="row">
           <div className="col-md-3 d-flex flex-column justify-content-centre align-items-center gap-3">
             <LeftPromoCards
@@ -80,7 +84,7 @@ function Home() {
                 },
               }}
             />
-               <LeftPromoCards
+            <LeftPromoCards
               bgColor="#FFFFFF4D"
               bgImage={leftCard2}
               description="Consumer electronics and gadgets"
@@ -95,17 +99,31 @@ function Home() {
           </div>
 
           <div className="col-12 col-md-9">
-           <ProductsPromoCardsGrid />
+            <ProductsPromoCardsGrid />
           </div>
         </div>
         <div className="flex-grow-2"></div>
       </div>
 
       {/* Promo Banner */}
-      <div className="mt-5">Blue Banner</div>
+      <div className=" container-xxl">
+        <BlogSection />
+      </div>
 
       {/* More Products */}
-      <div className="mt-5">More Products</div>
+      <div className="mt-0">
+        <h3 className="py-3 px-3">Recommended Items</h3>
+        <ProductsGrid />
+      </div>
+
+      <div className="container-xxl">
+        <h3 className="py-3 px-3">Our extra services</h3>
+        <div className="row">
+          <div className="col-12 d-flex gap-2">
+           <ServicesList  />
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </>

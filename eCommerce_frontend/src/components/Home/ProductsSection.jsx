@@ -3,13 +3,13 @@ import React from 'react'
 function ProductsSection({product}) {
   return (
     
-<div className="card  shadow-sm" style={{width:'300px',minHeight:'250px'}}>
-     <div className="d-flex justify-content-center align-items-center" style={{ height: "180px" }}>
+<div className="card  shadow-sm" style={{width:'300px',minHeight:'150px'}}>
+     <div className="d-flex justify-content-center p-0 align-items-center" style={{ height: "130px" }}>
         <img
           src={product.image}
           alt={product.name}
           style={{
-            maxHeight: "150px",
+            maxHeight: "100px",
             maxWidth: "100%",
             objectFit: "contain"
           }}
@@ -17,9 +17,10 @@ function ProductsSection({product}) {
       </div>
 
       <div className="card-body">
-        <h6 className="card-title">{product.name}</h6>
-        <p className="text-muted small">{product.description}</p>
         <p className="fw-bold">${product.price}</p>
+        <h6 className="text-muted small m-0">{product.name}</h6>
+        <p className="text-muted small">{product.description}</p>
+        
       </div>
     </div>
 
