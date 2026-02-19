@@ -13,7 +13,8 @@ import leftCard2 from "../assets/Home/leftCard2.png";
 import BlogSection from "../components/Home/BlogSection";
 import ProductsPromoCardsGrid from "../components/Home/ProductsPromoCardGrid";
 import ServicesList from "../components/Home//ServicesList";
-
+import RegionList from "../components/Home/RegionList";
+import Newsletter from "../components/Home/Newsletter";
 
 
 
@@ -116,11 +117,31 @@ function Home() {
         <ProductsGrid />
       </div>
 
+      {/* More services */}
+
       <div className="container-xxl">
         <h3 className="py-3 px-3">Our extra services</h3>
         <div className="row">
           <div className="col-12 d-flex gap-2">
            <ServicesList  />
+          </div>
+        </div>
+      </div>
+
+      {/* More Region*/}
+ <div className="container-xxl">
+        <h3 className="py-3 px-3">Regions</h3>
+        <div className="row">
+          <div className="col-12 d-flex gap-2">
+           <RegionList  />
+          </div>
+        </div>
+      </div>
+
+      <div className="container-xxl">
+        <div className="row">
+          <div className="col-12  d-flex gap-2 mt-3 bg-body-secondary p-4 justify-content-center">
+         <Newsletter />
           </div>
         </div>
       </div>
