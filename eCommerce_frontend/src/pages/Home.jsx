@@ -113,7 +113,7 @@ function Home() {
 
       {/* More Products */}
       <div className="mt-0">
-        <h3 className="py-3 px-3">Recommended Items</h3>
+        <h3 className="py-3 px-3 text-center text-md-start">Recommended Items</h3>
         <ProductsGrid />
       </div>
 

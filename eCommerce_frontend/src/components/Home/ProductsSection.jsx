@@ -3,7 +3,7 @@ import React from 'react'
 function ProductsSection({product}) {
   return (
     
-<div className="card  shadow-sm" style={{width:'300px',minHeight:'150px'}}>
+<div className="card  shadow-sm  h-100" style={{width:'270px'}} >
      <div className="d-flex justify-content-center p-0 align-items-center" style={{ height: "130px" }}>
         <img
           src={product.image}

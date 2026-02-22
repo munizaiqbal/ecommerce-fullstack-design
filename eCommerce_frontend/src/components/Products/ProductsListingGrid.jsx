@@ -1,14 +1,14 @@
 import React from "react";
 import products from "../../data/products.js";
-import ProductsSection from "./ProductsSection";
+import ProductsListingCard from "./ProductsListingCard.jsx";
 
 function ProductsGrid() {
   return (
     <div className="container-xxl ">
-      <div className="row g-2">
+      <div className="row g-md-2">
         {products.map((product) => (
-          <div key={product.id} className="col-12 col-sm-5  col-md-4 col-lg-3 d-flex justify-content-center">
-            <ProductsSection product={product} />
+          <div key={product.id} className="col-12 col-sm-12 col-md-4  d-flex justify-content-center">
+            <ProductsListingCard product={product} />
           </div>
         ))}
       </div>
