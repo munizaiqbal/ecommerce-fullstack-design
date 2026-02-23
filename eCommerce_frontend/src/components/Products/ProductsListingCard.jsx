@@ -1,8 +1,12 @@
 import React from "react";
 import ratings from '../../assets/Products/rating.png'
+import useCart from "../../context/useCart";
 
 function ProductsListingCard({ product }) {
+const { addToCart } = useCart();
+
   return (
+
     <div
       className="card  shadow-sm  h-100 d-flex flex-row flex-md-column p-2"
       style={{  width: "100%"}}
@@ -33,6 +37,12 @@ function ProductsListingCard({ product }) {
           <span style={{color:'green',fontSize:'14px',whiteSpace:'nowrap'}}>Free delivery</span>
 
         <p className="text-muted small">{product.description}</p>
+        <button
+  className="btn btn-primary w-100 mt-2"
+  onClick={() => addToCart(product)}
+>
+  Add to Cart
+</button>
       </div>
     </div>
   );

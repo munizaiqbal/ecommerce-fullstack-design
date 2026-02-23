@@ -1,5 +1,6 @@
 import React from "react";
 import menu from "../../assets/Home/menu.png";
+import { Link } from "react-router-dom";
 function BottomNavbar() {
   return (
     <div className=" border-bottom ">
@@ -13,9 +14,9 @@ function BottomNavbar() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#">
-                    All Category
-                  </a>
+                  <Link to="/products"  className="nav-link">
+                    <span>All Category</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
@@ -57,11 +58,11 @@ function BottomNavbar() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-             English,USD
+              English,USD
             </a>
           </div>
 
-           <div className="dropdown">
+          <div className="dropdown">
             <a
               className="btn  dropdown-toggle"
               href="#"
@@ -69,7 +70,7 @@ function BottomNavbar() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-             Ship to
+              Ship to
             </a>
           </div>
         </div>
