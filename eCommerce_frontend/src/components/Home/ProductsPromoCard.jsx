@@ -13,7 +13,7 @@ function ProductsPromoCard({product}) {
 
          <div className="d-flex justify-content-end align-items-end ms-1" style={{ height: "80px" }}>
         <img
-          src={product.image}
+          src={`http://localhost:5000${product.image}`}
           alt={product.name}
           style={{
             maxHeight: "100px",

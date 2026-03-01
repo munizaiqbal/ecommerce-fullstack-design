@@ -1,5 +1,5 @@
 import React from "react";
-import products from "../../data/products.js";
+import { useEffect, useState } from "react";
 import ProductsListingCard from "./ProductsListingCard.jsx";
 
 function ProductsListingGrid({
@@ -11,6 +11,28 @@ function ProductsListingGrid({
   sortOption = "Featured",
    searchTerm =""
 }) {
+
+   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+   useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/products");
+        const data = await response.json();
+        setProducts(data);
+        setLoading(false);
+      } catch (err) {
+            console.error(err);
+        setError("Failed to fetch products");
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
   // Filter products based on sidebar state
   const filteredProducts = products.filter((p) => {
     const matchCategory =
@@ -36,13 +58,17 @@ function ProductsListingGrid({
   } else if (sortOption === "HighToLow") {
     filteredProducts.sort((a, b) => b.price - a.price);
   } // Featured can keep original order
+
+
+  if (loading) return <h2>Loading...</h2>;
+if (error) return <h2>{error}</h2>;
   return (
     <div className="container-xxl">
       <div className="row g-md-2">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div
-              key={product.id}
+              key={product._id}
               className="col-12 col-sm-12 col-md-4 d-flex justify-content-center"
             >
               <ProductsListingCard product={product} />

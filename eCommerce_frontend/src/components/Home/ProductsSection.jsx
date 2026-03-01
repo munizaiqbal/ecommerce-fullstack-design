@@ -1,12 +1,23 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 function ProductsSection({product}) {
+  const navigate = useNavigate();
+   const handleClick = () => {
+    navigate("/products");
+  };
   return (
+
+      <div
+      onClick={handleClick}
+      className="card shadow-sm h-100"
+      style={{ width: "270px", cursor: "pointer" }}
+    >
     
 <div className="card  shadow-sm  h-100" style={{width:'270px'}} >
      <div className="d-flex justify-content-center p-0 align-items-center" style={{ height: "130px" }}>
         <img
-          src={product.image}
+         src={`http://localhost:5000${product.image}`}
           alt={product.name}
           style={{
             maxHeight: "100px",
@@ -23,7 +34,7 @@ function ProductsSection({product}) {
         
       </div>
     </div>
-
+</div>
     
   )
 }

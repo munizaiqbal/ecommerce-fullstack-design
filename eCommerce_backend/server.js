@@ -4,6 +4,12 @@ const connectDB=require('./config/db');
 const app=express();
 app.use(express.json());
 
+const path = require("path");
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+const cors = require("cors");
+app.use(cors());
+
 app.get('/',(req,res)=>{
 res.send('API is running')
 })

@@ -16,7 +16,7 @@ const { addToCart } = useCart();
         style={{ height: "130px" }}
       >
         <img
-          src={product.image}
+         src={`http://localhost:5000${product.image}`}
           alt={product.name}
           style={{
             maxHeight: "100px",
