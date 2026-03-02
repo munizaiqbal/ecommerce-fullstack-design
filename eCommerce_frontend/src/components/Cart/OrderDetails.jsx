@@ -5,7 +5,6 @@ function OrderDetails() {
     const { cartItems, updateQuantity } = useCart();
 
  const handleUpdate = (productId, action) => {
-   console.log("Updating product with ID:", productId, "Action:", action);
   updateQuantity(productId, action);
 };
 if (!cartItems.length) {

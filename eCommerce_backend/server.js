@@ -33,5 +33,4 @@ const productRoutes = require("./routes/productRoutes");
 app.use("/api/products", productRoutes);
 
 app.use("/api/cart", require("./routes/cartRoutes"));
-console.log("Setting up routes...");
 startServer();

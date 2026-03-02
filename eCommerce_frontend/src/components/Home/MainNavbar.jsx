@@ -6,6 +6,7 @@ import orders from "../../assets/Home/heart.png";
 import cart from "../../assets/Home/cart.png";
 import useCart from "../../context/useCart";
 import { useState } from "react";
+import "./MainNavbar.css"; 
 
 function MainNavbar({ showSearch = true }) {
   const { cartItems } = useCart();

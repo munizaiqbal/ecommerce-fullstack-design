@@ -1,13 +1,15 @@
 import React from "react";
+import useCart from "../../context/useCart";
 
-function OrderSummary({ cart }) {
-  const subtotal = cart.items.reduce(
+function OrderSummary() {
+   const { cartItems } = useCart();
+  const subtotal = cartItems.reduce(
     (acc, item) =>
       acc + Number(item.product.price) * Number(item.quantity),
     0
   );
 
-  const shipping = cart.items.length > 0 ? 10 : 0;
+  const shipping = cartItems.length > 0 ? 10 : 0;
   const total = subtotal + shipping;
 
   return (
@@ -41,7 +43,7 @@ function OrderSummary({ cart }) {
 
         <button
           className="btn btn-success w-100 mt-3"
-          disabled={cart.items.length === 0}
+          disabled={cartItems.length === 0}
         >
           Checkout
         </button>

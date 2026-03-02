@@ -21,10 +21,10 @@ import Newsletter from "../components/Home/Newsletter";
 function Home() {
   return (
     <>
-      <MainNavbar showSearch={true} style={{position:'Fixed'}} />
-      <BottomNavbar />
+      <MainNavbar showSearch={true} className="fixed-navbar" />
+      <BottomNavbar style={{paddingBottom:'60px'}}/>
 
-      <div className="bg-body-secondary ">
+      <div className=" bg-body-secondary ">
         <div className="container-xxl ">
           {/* top Section */}
           <div className="row  " style={{ minHeight: "400px" }}>
