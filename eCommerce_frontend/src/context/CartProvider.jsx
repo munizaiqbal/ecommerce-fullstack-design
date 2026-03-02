@@ -2,53 +2,61 @@ import React, { useState, useEffect } from "react";
 import CartContext from "./CartContext";
 
 const CartProvider = ({ children }) => {
-  // Load cart from localStorage if available
-  const [cartItems, setCartItems] = useState(() => {
-    const saved = localStorage.getItem("cartItems");
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [cartItems, setCartItems] = useState([]);
 
-  // Save cart to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  const addToCart = (product) => {
-    const existingItem = cartItems.find(item => item.id === product.id);
-
-    if (existingItem) {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+  // Fetch cart from backend
+  const fetchCart = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/cart");
+      const data = await res.json();
+      setCartItems(data.items || []);
+    } catch (error) {
+      console.log("Error fetching cart:", error);
     }
   };
 
-  const removeFromCart = (id) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
+  // Add item
+  const addToCart = async (productId) => {
+    await fetch("http://localhost:5000/api/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ productId }),
+    });
+
+    fetchCart();
   };
 
-  const increaseQty = (id) => {
-    setCartItems(cartItems.map(item =>
-      item.id === id
-        ? { ...item, quantity: item.quantity + 1 }
-        : item
-    ));
+  // Remove item
+  const removeFromCart = async (productId) => {
+    await fetch(`http://localhost:5000/api/cart/${productId}`, {
+      method: "DELETE",
+    });
+
+    fetchCart();
   };
 
-  const decreaseQty = (id) => {
-    setCartItems(cartItems.map(item =>
-      item.id === id && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    ));
+  // Update quantity
+  const updateQuantity = async (productId, action) => {
+    await fetch(`http://localhost:5000/api/cart/${productId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ action }), // "inc" or "dec"
+    });
+
+    fetchCart();
   };
 
   const cartTotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
+    (total, item) =>
+      total + item.product.price * item.quantity,
     0
   );
 
@@ -58,9 +66,9 @@ const CartProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
-        increaseQty,
-        decreaseQty,
-        cartTotal
+        updateQuantity,
+        cartTotal,
+        fetchCart,
       }}
     >
       {children}

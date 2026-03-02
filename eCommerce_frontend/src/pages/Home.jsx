@@ -21,7 +21,7 @@ import Newsletter from "../components/Home/Newsletter";
 function Home() {
   return (
     <>
-      <MainNavbar showSearch={true} />
+      <MainNavbar showSearch={true} style={{position:'Fixed'}} />
       <BottomNavbar />
 
       <div className="bg-body-secondary ">

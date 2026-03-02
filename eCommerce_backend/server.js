@@ -15,7 +15,7 @@ res.send('API is running')
 })
 const startServer = async () => {
   try {
-    await connectDB();  // wait for DB connection
+    await connectDB();  
     
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
@@ -31,4 +31,7 @@ const startServer = async () => {
 const productRoutes = require("./routes/productRoutes");
 
 app.use("/api/products", productRoutes);
+
+app.use("/api/cart", require("./routes/cartRoutes"));
+console.log("Setting up routes...");
 startServer();
